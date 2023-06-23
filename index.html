@@ -8,17 +8,21 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="/dist/output.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image" href="assets/img/pic.jpeg" class="w-10 rounded-full">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Portfolio - Website</title>
 </head>
 
 <body>
     <!--navbar-->
-    <div class="navbar bg-blue-900 sticky top-0">
+    <div class="navbar bg-blue-900">
         <div class="navbar-start">
             <div class="dropdown">
                 <label tabindex="0" class="btn btn-ghost hover:text-yellow-500 lg:hidden text-white">
@@ -39,7 +43,9 @@
                     </li>
                 </ul>
             </div>
-            <a href="#home-pages" class="btn btn-ghost normal-case text-xl text-white">Agam.</a>
+            <main class="left_menu">
+                <a href="#home-pages" class="btn btn-ghost normal-case text-xl text-white">Agam.</a>
+            </main>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="text-white font-semibold menu menu-horizontal px-1">
@@ -63,14 +69,20 @@
     </div>
     <!--end-navbar-->
 
+    <div class="overlay">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
+    </div>
+
     <!--hero-->
     <section id="home-pages">
         <div class="hero min-h-screen bg-white">
             <div class="hero-content flex-col lg:flex-row">
-                <img src="assets/img/pic.jpeg" class="max-w-sm rounded-lg shadow-2xl">
-                <div>
+                <img src="assets/img/pic.jpeg" class="pic-img max-w-sm rounded-lg shadow-2xl">
+                <div class="hero-title">
                     <h1 class="text-5xl font-extrabold text-blue-800">Agamm.</h1>
-                    <p class="py-6">Welcome to my portfolio website, a place where ideas and creativity exist.</p>
+                    <p class="hero-paragraph py-6">Welcome to my portfolio website, a place where ideas and creativity exist.</p>
                     <a href="#about-pages">
                         <button class="btn btn-neutral text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring active:bg-yellow-600 border-2 border-blue-800 ">Get Started</button>
                     </a>
@@ -81,13 +93,13 @@
     <!--end-hero-->
 
     <!--about-->
-    <section id="about-pages" class="min-h-screen bg-gray-900">
+    <section id="about-pages" class="about-pages min-h-screen bg-gray-900">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
             <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 mt-20">
                 <div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full" style="width: 75%;">
-                    <img alt="Agam" src="assets/img/git.jpeg" class="absolute inset-0 h-full w-full object-cover" />
+                    <img alt="Agam" src="assets/img/git.jpeg" class="about-img absolute inset-0 h-full w-full object-cover" />
                 </div>
-                <div class="lg:py-24">
+                <div class="about-title lg:py-24">
                     <h2 class="text-3xl font-bold sm:text-4xl text-white">Who am i ?</h2>
 
                     <p class="mt-4 text-white">
@@ -112,16 +124,17 @@
         <div class="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:me-0 lg:pe-0 lg:ps-8">
             <div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:items-center lg:gap-x-16">
                 <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl text-left">
-                        Portfolio
-                    </h2>
+                    <div data-aos="fade-up">
+                        <h2 class="title-portfolio text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl text-left">
+                            Portfolio
+                        </h2>
 
-                    <p class="mt-4 text-gray-400 text-left">
-                        I have strong coding and UI/UX design skills, as well as proven experience developing successful projects. In coding, I have expertise in various programming languages such as JavaScript and HTML/CSS. I have developed interactive web applications, e-commerce
-                        sites, and also contributed to the development of complex content management systems. I'm happy to show examples of projects I've worked on in the field of coding and UI/UX design, as well as explain my approach to meeting challenges
-                        and achieving successful results.
-                    </p>
-
+                        <p class="descript-portfolio mt-4 text-gray-400 text-left">
+                            I have strong coding and UI/UX design skills, as well as proven experience developing successful projects. In coding, I have expertise in various programming languages such as JavaScript and HTML/CSS. I have developed interactive web applications, e-commerce
+                            sites, and also contributed to the development of complex content management systems. I'm happy to show examples of projects I've worked on in the field of coding and UI/UX design, as well as explain my approach to meeting
+                            challenges and achieving successful results.
+                        </p>
+                    </div>
                     <div class="hidden lg:mt-8 lg:flex lg:gap-4">
                         <button class="prev-button rounded-full border border-yellow-500 p-3 text-yellow-500 hover:bg-yellow-500 hover:text-white">
             <span class="sr-only">Previous Slide</span>
@@ -165,219 +178,228 @@
                     <div class="swiper-container !overflow-hidden">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                                    <div>
-                                        <div class="flex gap-0.5 text-green-500">
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <div data-aos="fade-left">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div class="box">
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
+                                                    Website Portfolio UI/UX.
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Pembuatan website portfolio UI/UX Design menggunakan HTML, CSS.
+                                                </p>
+                                            </div>
                                         </div>
 
-                                        <div class="mt-4">
-                                            <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
-                                                Website Portfolio UI/UX.
-                                            </p>
-
-                                            <p class="mt-4 leading-relaxed text-gray-500">
-                                                Pembuatan website portfolio UI/UX Design menggunakan HTML, CSS.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <footer>
-                                        <a href="https://portfolio-website-00.netlify.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
-                                    </footer>
-                                </blockquote>
+                                        <footer>
+                                            <a href="https://portfolio-website-00.netlify.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
+                                        </footer>
+                                    </blockquote>
+                                </div>
                             </div>
 
                             <div class="swiper-slide">
-                                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                                    <div>
-                                        <div class="flex gap-0.5 text-green-500">
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <div data-aos="fade-left">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div class="box">
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
+                                                    Website jual beli sepatu - Footwear.
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Pembuatan website sepatu menggunakan Tailwind CSS.
+                                                </p>
+                                            </div>
                                         </div>
 
-                                        <div class="mt-4">
-                                            <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
-                                                Website jual beli sepatu - Footwear.
-                                            </p>
-
-                                            <p class="mt-4 leading-relaxed text-gray-500">
-                                                Pembuatan website sepatu menggunakan Tailwind CSS.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <footer>
-                                        <a href="https://footwearco.netlify.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
-                                    </footer>
-                                </blockquote>
+                                        <footer>
+                                            <a href="https://footwearco.netlify.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
+                                        </footer>
+                                    </blockquote>
+                                </div>
                             </div>
 
                             <div class="swiper-slide">
-                                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                                    <div>
-                                        <div class="flex gap-0.5 text-green-500">
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <div data-aos="fade-left">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div class="box">
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                       />
                     </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
+                                                    Website Informasi Magang.
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Penambahan halaman informasi magang pada website volunteer Media Selaras.
+                                                </p>
+                                            </div>
                                         </div>
 
-                                        <div class="mt-4">
-                                            <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
-                                                Website Informasi Magang.
-                                            </p>
-
-                                            <p class="mt-4 leading-relaxed text-gray-500">
-                                                Penambahan halaman informasi magang pada website volunteer Media Selaras.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <footer>
-                                        <a href="https://halaman-beasiswa.vercel.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
-                                    </footer>
-                                </blockquote>
+                                        <footer>
+                                            <a href="https://halaman-beasiswa.vercel.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
+                                        </footer>
+                                    </blockquote>
+                                </div>
                             </div>
 
                             <div class="swiper-slide">
-                                <blockquote class="flex h-full flex-col justify-between bg-white p-12">
-                                    <div>
-                                        <div class="flex gap-0.5 text-green-500">
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <div data-aos="fade-left">
+                                    <blockquote class="flex h-full flex-col justify-between bg-white p-12">
+                                        <div class="box">
+                                            <div class="flex gap-0.5 text-green-500">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     />
                   </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     />
                   </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     />
                   </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     />
                   </svg>
 
-                                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
                     />
                   </svg>
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
+                                                    CRUD Website.
+                                                </p>
+
+                                                <p class="mt-4 leading-relaxed text-gray-500">
+                                                    Pembuatan website CRUD dengan HTML, CSS, JS diakhiri dengan deployment menggunakan Vercel.
+                                                </p>
+                                            </div>
                                         </div>
 
-                                        <div class="mt-4">
-                                            <p class="text-2xl font-bold text-blue-800 sm:text-3xl">
-                                                CRUD Website.
-                                            </p>
-
-                                            <p class="mt-4 leading-relaxed text-gray-500">
-                                                Pembuatan website CRUD dengan HTML, CSS, JS diakhiri dengan deployment menggunakan Vercel.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <footer>
-                                        <a href="https://crud-operations-beige.vercel.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
-                                    </footer>
-                                </blockquote>
+                                        <footer>
+                                            <a href="https://crud-operations-beige.vercel.app/" class="btn mt-3 bg-blue-800 text-white hover:bg-blue-950">Read More</a>
+                                        </footer>
+                                    </blockquote>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="mt-8 flex justify-center gap-4 lg:hidden">
-                <button aria-label="Previous slide" class="prev-button rounded-full border border-yellow-500 p-4 text-yellow-500 hover:bg-yellow-500 hover:text-white">
+        <div class="mt-8 flex justify-center gap-4 lg:hidden">
+            <button aria-label="Previous slide" class="prev-button rounded-full border border-yellow-500 p-4 text-yellow-500 hover:bg-yellow-500 hover:text-white">
         <svg
           class="h-5 w-5 -rotate-180 transform"
           fill="none"
@@ -394,7 +416,7 @@
         </svg>
       </button>
 
-                <button aria-label="Next slide" class="next-button rounded-full border border-yellow-500 p-4 text-yellow-500 hover:bg-yellow-500 hover:text-white">
+            <button aria-label="Next slide" class="next-button rounded-full border border-yellow-500 p-4 text-yellow-500 hover:bg-yellow-500 hover:text-white">
         <svg
           class="h-5 w-5"
           fill="none"
@@ -410,7 +432,7 @@
           />
         </svg>
       </button>
-            </div>
+        </div>
         </div>
     </section>
 
@@ -443,15 +465,18 @@
     <!--end-portfolio-->
 
     <!--skills-->
-    <section id="skills-page" class="bg-gray-900 text-white">
+    <section id="skills-page" class="skills-page bg-gray-900 text-white">
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
             <div class="mx-auto max-w-lg text-center">
-                <h2 class="text-3xl font-bold sm:text-4xl">Skills</h2>
+                <div data-aos="fade-down">
+                    <h2 class="text-3xl font-bold sm:text-4xl">Skills</h2>
+                </div>
             </div>
 
-            <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="skill-content mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <a class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-yellow-500/10 hover:shadow-yellow-500/10" href="/services/digital-campaigns">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div data-aos="fade-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M12 14l9-5-9-5-9 5 9 5z" />
           <path
             d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
@@ -464,15 +489,18 @@
           />
         </svg>
 
-                    <h2 class="mt-4 text-xl font-bold text-white">Frontend Developer</h2>
+                        <h2 class="mt-4 text-xl font-bold text-white">Frontend Developer</h2>
 
-                    <p class="mt-1 text-sm text-gray-300">
-                        master HTML and CSS frameworks such as Bootstrap, Material UI, and Tailwind CSS, and understand basic JS and React JS
-                    </p>
+                        <p class="mt-1 text-sm text-gray-300">
+                            master HTML and CSS frameworks such as Bootstrap, Material UI, and Tailwind CSS, and understand basic JS and React JS
+                        </p>
+                    </div>
                 </a>
 
+
                 <a class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-yellow-500/10 hover:shadow-yellow-500/10" href="/services/digital-campaigns">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div data-aos="fade-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M12 14l9-5-9-5-9 5 9 5z" />
           <path
             d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
@@ -485,15 +513,17 @@
           />
         </svg>
 
-                    <h2 class="mt-4 text-xl font-bold text-white">UI/UX Designer</h2>
+                        <h2 class="mt-4 text-xl font-bold text-white">UI/UX Designer</h2>
 
-                    <p class="mt-1 text-sm text-gray-300">
-                        Familiar with UI Design, UX Writer, Wireframing, Prototyping. Familiar with UI/UX Design software such as Figma, Adobe XD, Miro and basic Maze as Usability Testing
-                    </p>
+                        <p class="mt-1 text-sm text-gray-300">
+                            Familiar with UI Design, UX Writer, Wireframing, Prototyping. Familiar with UI/UX Design software such as Figma, Adobe XD, Miro and basic Maze as Usability Testing
+                        </p>
+                    </div>
                 </a>
 
                 <a class="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-yellow-500/10 hover:shadow-yellow-500/10" href="/services/digital-campaigns">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div data-aos="fade-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M12 14l9-5-9-5-9 5 9 5z" />
           <path
             d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
@@ -506,14 +536,16 @@
           />
         </svg>
 
-                    <h2 class="mt-4 text-xl font-bold text-white">Video Editing</h2>
+                        <h2 class="mt-4 text-xl font-bold text-white">Video Editing</h2>
 
-                    <p class="mt-1 text-sm text-gray-300">
-                        Mastering various Video Editing software such as Adobe Premiere, Adobe After Effects, Capcut, VN, and others
-                    </p>
+                        <p class="mt-1 text-sm text-gray-300">
+                            Mastering various Video Editing software such as Adobe Premiere, Adobe After Effects, Capcut, VN, and others
+                        </p>
+                    </div>
                 </a>
-
             </div>
+        </div>
+        </div>
     </section>
     <!--end-skills-->
 
@@ -555,7 +587,7 @@
                     </div>
                 </div>
 
-                <div class="rounded-lg bg-slate-100 p-8 shadow-lg lg:col-span-3 lg:p-12">
+                <div class="contact-box rounded-lg bg-slate-100 p-8 shadow-lg lg:col-span-3 lg:p-12">
                     <form action="" class="space-y-4">
                         <div>
                             <label class="sr-only" for="name">Name</label>
@@ -613,6 +645,9 @@
     <!--end-footer-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
